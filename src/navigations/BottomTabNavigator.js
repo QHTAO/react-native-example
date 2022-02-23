@@ -6,14 +6,51 @@ import NotifyScreen from '../screens/NotifyScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import WorkbenchScreen from '../screens/WorkbenchScreen';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 const BottomTabNavigator = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator>
-      <Tab.Screen name={HOME} component={HomeScreen} />
-      <Tab.Screen name={WORKBENCH} component={NotifyScreen} />
-      <Tab.Screen name={NOTIFY} component={ProfileScreen} />
-      <Tab.Screen name={PROFILE} component={WorkbenchScreen} />
+    <Tab.Navigator
+      tabBarOptions={{
+        showIcon: true,
+      }}>
+      <Tab.Screen
+        name={HOME}
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={WORKBENCH}
+        component={WorkbenchScreen}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="grid" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={NOTIFY}
+        component={NotifyScreen}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="notifications" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={PROFILE}
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="person" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
