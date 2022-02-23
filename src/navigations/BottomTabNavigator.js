@@ -19,6 +19,7 @@ const BottomTabNavigator = () => {
         name={HOME}
         component={HomeScreen}
         options={{
+          title: '首页',
           tabBarIcon: ({size, color}) => (
             <Icon name="home" color={color} size={size} />
           ),
@@ -28,6 +29,7 @@ const BottomTabNavigator = () => {
         name={WORKBENCH}
         component={WorkbenchScreen}
         options={{
+          title: '工作台',
           tabBarIcon: ({size, color}) => (
             <Icon name="grid" color={color} size={size} />
           ),
@@ -37,6 +39,7 @@ const BottomTabNavigator = () => {
         name={NOTIFY}
         component={NotifyScreen}
         options={{
+          title: '通知',
           tabBarIcon: ({size, color}) => (
             <Icon name="notifications" color={color} size={size} />
           ),
@@ -46,6 +49,7 @@ const BottomTabNavigator = () => {
         name={PROFILE}
         component={ProfileScreen}
         options={{
+          title: '我的',
           tabBarIcon: ({size, color}) => (
             <Icon name="person" color={color} size={size} />
           ),
