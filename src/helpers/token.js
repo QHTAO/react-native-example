@@ -8,8 +8,7 @@ export const setToken = async token => {
 };
 export const getToken = async () => {
   try {
-    const token = await AsyncStorage.getItem('token');
-    return token;
+    return await AsyncStorage.getItem('token');
   } catch (error) {
     console.error(error);
   }
