@@ -5,10 +5,10 @@ const Container = ({style, children}) => {
   return (
     <SafeAreaView style={[tw`flex-1 bg-white`, style]}>
       <ScrollView style={{flex: 1}}>
-        <View>{children}</View>
+        <View style={style}>{children}</View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-export default Container;
 
+export default Container;
