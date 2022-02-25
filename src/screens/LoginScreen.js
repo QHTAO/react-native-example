@@ -14,9 +14,8 @@ const LoginScreen = () => {
   const handleFormSubmit = async values => {
     const token = 'dsaD#@$@#QWASC3qrsdf$EWEFFER#@%R67r5uhsfd';
     console.log(values);
-
-    // await setToken(token);
-    // dispatch(setAuthenticated(true));
+    await setToken(token);
+    dispatch(setAuthenticated(true));
   };
 
   const {handleChange, handleSubmit, handleBlur, values, errors, touched} =
@@ -42,7 +41,9 @@ const LoginScreen = () => {
           onChangeText={handleChange('email')}
           onBlur={handleBlur('email')}
         />
-        {touched.email && <Text style={tw`text-red-500`}>{errors.email}</Text>}
+        {touched.email && (
+          <Text style={tw`text-red-500 mt-1`}>{errors.email}</Text>
+        )}
       </View>
       <View style={tw`mb-6`}>
         <Input
@@ -52,7 +53,7 @@ const LoginScreen = () => {
           onBlur={handleBlur('password')}
         />
         {touched.password && (
-          <Text style={tw`text-red-500`}>{errors.password}</Text>
+          <Text style={tw`text-red-500 mt-1`}>{errors.password}</Text>
         )}
       </View>
       <View style={tw`mb-4`}>
